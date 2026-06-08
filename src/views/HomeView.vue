@@ -213,7 +213,7 @@
     </section>
 
     <!-- 8. CORPORATE INDUSTRIAL FOOTER -->
-    <footer class="footer">
+    <footer ref="footerTarget" class="footer">
       <div class="footer-top">
         <div class="footer-brand-col">
           <img src="/kreator-logo.webp" alt="Kreator Logo" class="logo-k" />
@@ -250,15 +250,17 @@
           <a href="#">Terms of Use</a>
         </div>
       </div>
-      <div class="footer-agency-credit">
+      <!-- <div class="footer-agency-credit">
         <span class="agency-credit">Built by <a href="https://danielkaufman.dev" target="_blank">DKD Media</a></span>
-      </div>
+      </div> -->
     </footer>
+    <CreditBadge />
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import CreditBadge from '../components/CreditBadge.vue'
 
 const systemPreview = ref([
   {
@@ -838,6 +840,7 @@ h1 {
   color: rgba(255, 255, 255, 0.2);
   text-decoration: none;
   margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 .footer-agency-credit {
   display: flex;
@@ -857,6 +860,7 @@ h1 {
 .agency-credit a:hover {
   color: var(--orange);
 }
+
 /* Fully Scalable Breakpoint Fallbacks */
 @media (max-width: 1200px) {
   .solutions-grid {
